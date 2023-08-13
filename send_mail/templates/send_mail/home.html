@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+	<div class="row justify-content-center">
+		<div class="col-3"></div>
+		<div class="col-6 pt-4">
+
+			{% if message %}
+			<div class="alert alert-warning alert-dismissible fade show" role="alert">
+			  <strong>{{ message }}</strong>
+			  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{% endif %}
+
+			<h3>Send Mail Program with Django</h3>
+			<form action="" method="post" class="form-control">
+				{% csrf_token %}
+				<div>
+					<label for="email">Email:</label>
+				</div>
+				<div>
+					<input id="email" type="email" name="email" placeholder="Enter your Email  Address">
+				</div>
+				<div><button type="submit" class="btn btn-primary">Envoyez</button></div>
+
+			</form>
+		</div>
+		<div class="col-3"></div>
+	</div>
+{% endblock %}
